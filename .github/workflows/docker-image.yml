@@ -28,7 +28,7 @@ jobs:
         name: Login to Aliyun Container Registry
         uses: docker/login-action@v2
         with:
-          registry: registry.cn-hangzhou.aliyuncs.com
+          registry: crpi-7u9ufs69jsthup8p.cn-hangzhou.personal.cr.aliyuncs.com
           username: ${{ secrets.ALIYUN_REGISTRY_USER }}
           password: ${{ secrets.ALIYUN_REGISTRY_PASSWORD }}
 
@@ -50,6 +50,6 @@ jobs:
           file: ./Dockerfile
           push: true
           platforms: 'linux/amd64,linux/arm64'
-          tags: registry.cn-hangzhou.aliyuncs.com/tts2024xz/xz_tts2024:${{ steps.set_tag.outputs.tag }}
+          tags: crpi-7u9ufs69jsthup8p.cn-hangzhou.personal.cr.aliyuncs.com/tts2024xz/xz_tts2024:${{ steps.set_tag.outputs.tag }}
           cache-from: type=gha
           cache-to: type=gha,mode=max
